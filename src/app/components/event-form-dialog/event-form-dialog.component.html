@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{event.name ? event.name : "Let's rock!"}}</h2>
+<mat-dialog-content>
+    <form autocomplete='off'>
+        <mat-form-field>
+            <mat-label>Event name</mat-label>
+            <input matInput placeholder='text'>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Event name</mat-label>
+            <input matInput placeholder='text'>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Event name</mat-label>
+            <input matInput placeholder='text'>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Event name</mat-label>
+            <input matInput placeholder='text'>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]='true' color='accent' cdkFocusInitial>Save</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

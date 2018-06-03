@@ -17,7 +17,7 @@ export class EventItem {
     public owner: User;
 
     constructor(
-        data: EventItem
+        data?: EventItem
     ) {
         this.id = data['id'];
         this.name = data['name'];

@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { EventService } from '../../services/event.service';
 import { EventItem } from '../../models/event-item';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'larp-event-list',
@@ -14,13 +16,17 @@ export class EventListComponent implements OnInit {
 
     constructor(
         private cdr: ChangeDetectorRef,
-        private eventService: EventService
+        private eventService: EventService,
+        private route: ActivatedRoute
     ) { }
 
     ngOnInit() {
-        this.eventService.events()
-            .subscribe(x => {
-                this.eventList = [...x];
+        this.route.data
+            .pipe(
+                map(data => data['events'])
+            )
+            .subscribe((events: EventItem[]) => {
+                this.eventList = [...events];
                 this.cdr.markForCheck();
             });
     }

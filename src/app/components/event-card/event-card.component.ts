@@ -12,11 +12,10 @@ import { EventItem } from '../../models/event-item';
 export class EventCardComponent implements OnInit {
 
     @Input() event: EventItem;
+    public maxLength = 250;
 
     constructor() { }
 
-    ngOnInit() {
-        console.log('imin => ');
-    }
+    ngOnInit() { }
 
 }

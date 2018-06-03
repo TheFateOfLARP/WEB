@@ -5,7 +5,7 @@ const PROXY_CONFIG = [
             "/eventtypes",
             "/users"
         ],
-        target: "http://192.168.1.4:1337",
+        target: "http://snatch.org.ua",
         secure: false
     }
 ]

@@ -8,16 +8,18 @@ import { LarpRoutingModule } from './larp-routing.module';
 import { MatDesignModule } from './mat-design.module';
 
 import { AppComponent } from './app.component';
-import { NavComponent, EventCardComponent } from './components/';
+import { EventCardComponent, EventFormDialogComponent } from './components/';
 import { EventListComponent } from './views/';
+import { ShortTextPipe } from './pipes/';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavComponent,
         EventCardComponent,
-        EventListComponent
+        EventListComponent,
+        EventFormDialogComponent,
+        ShortTextPipe
     ],
     imports: [
         BrowserModule,
@@ -26,6 +28,9 @@ import { EventListComponent } from './views/';
         LarpRoutingModule,
         HttpClientModule,
         MatDesignModule
+    ],
+    entryComponents: [
+        EventFormDialogComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

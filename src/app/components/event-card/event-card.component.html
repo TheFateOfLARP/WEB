@@ -6,7 +6,13 @@
     </mat-card-header>
     <img mat-card-image [src]="event.imgUrl">
     <mat-card-content>
-        {{event.description}}
+        {{event.description | shortText: maxLength}}
+        <a mat-icon-button
+            aria-label='read more'
+            *ngIf='event.description.length > maxLength' 
+            [routerLink]="['/event', event.id].join('/')">
+            <mat-icon aria-label="Read more icon">more_horiz</mat-icon>
+        </a>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button>LIKE</button>

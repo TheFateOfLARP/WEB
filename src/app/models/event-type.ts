@@ -4,7 +4,7 @@ export class EventType {
     public slug: string;
 
     constructor(
-        data: EventType
+        data?: EventType
     ) {
         this.id = data['id'];
         this.name = data['name'];

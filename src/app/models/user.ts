@@ -3,7 +3,7 @@ export class User {
     public userName: string;
 
     constructor(
-        data: User
+        data?: User
     ) {
         this.id = data['id'];
         this.userName = data['username'];
