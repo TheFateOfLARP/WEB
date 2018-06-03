@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { EventCardComponent, EventFormDialogComponent } from './components/';
 import { EventListComponent } from './views/';
 import { ShortTextPipe } from './pipes/';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ShortTextPipe } from './pipes/';
         BrowserAnimationsModule,
         LayoutModule,
         LarpRoutingModule,
+        ReactiveFormsModule,
         HttpClientModule,
         MatDesignModule
     ],

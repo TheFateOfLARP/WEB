@@ -13,7 +13,7 @@ const routes: Routes = [
         { path: '', children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: ':id', pathMatch: 'prefix', children: [
-                { path: 'edit', component: EventFormDialogComponent, outlet: 'popup', pathMatch: 'full' }
+                { path: 'edit', component: EventFormDialogComponent, pathMatch: 'full' }
             ] },
         ] }
     ] },
