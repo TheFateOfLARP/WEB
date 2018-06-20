@@ -1,10 +1,10 @@
-<h2 mat-dialog-title>{{eventFormGroup.eventName ? eventFormGroup.eventName : "Let's rock!"}}</h2>
+<h2 mat-dialog-title>{{eventFormGroup.controls.eventName.value ? eventFormGroup.controls.eventName.value : "Let's rock!"}}</h2>
 <mat-dialog-content>
     <form autocomplete='off' [formGroup]='eventFormGroup' novalidate>
         <mat-form-field>
             <mat-label>Event name</mat-label>
             <input matInput formControlName='eventName' required>
-            <mat-error *ngIf='eventName.hasError("required")'>Please enter the name</mat-error>
+            <mat-error *ngIf='eventFormGroup.controls.eventName.hasError("required")'>Please enter the name</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-select placeholder='Event type' formControlName='eventType' required>
@@ -12,7 +12,7 @@
                 <mat-option *ngFor='let type of event.types' [value]='type.slug'>
                     {{ type.name }}
                 </mat-option>
-                <mat-error *ngIf='eventType.hasError("required")'>Please choose a type</mat-error>
+                <mat-error *ngIf='eventFormGroup.controls.eventType.hasError("required")'>Please choose a type</mat-error>
             </mat-select>
         </mat-form-field>
         <mat-form-field>

@@ -1,11 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material';
 import { EventFormDialogComponent } from './components';
 
 @Component({
-    selector: 'app-root',
+    selector: 'larp-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
