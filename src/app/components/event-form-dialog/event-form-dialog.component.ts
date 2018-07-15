@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EventFormDialogComponent implements OnInit {
 
-    public event = {types: [
+    public event: any = {types: [
         { name: 'test1', slug: 'slug1' },
         { name: 'test2', slug: 'slug2' },
         { name: 'test3', slug: 'slug3' }
@@ -20,13 +20,11 @@ export class EventFormDialogComponent implements OnInit {
         private fb: FormBuilder
     ) { }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.eventFormGroup = this.fb.group({
             'eventName': ['', Validators.required],
             'eventType': ['', Validators.required]
         });
-
-        console.log('this.eventFormGroup => ', this.eventFormGroup);
     }
 
 }

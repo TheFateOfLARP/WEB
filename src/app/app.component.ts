@@ -17,6 +17,7 @@ export class AppComponent {
     ) { }
 
     addDialog() {
-        this.dialog.open(EventFormDialogComponent);
+        const dialogRef = this.dialog.open(EventFormDialogComponent);
+        dialogRef.afterClosed().subscribe(result => console.log('result => ', result));
     }
 }
