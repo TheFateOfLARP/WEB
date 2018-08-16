@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, pipe } from 'rxjs';
-import { EventItem } from '../models/event-item';
 import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+import { EventItem } from '../models/event-item.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -13,10 +14,10 @@ export class EventService {
     private eventCache: Observable<EventItem[]>;
 
     constructor(
-        public http: HttpClient
+        private http: HttpClient
     ) { }
 
-    public events(): Observable<EventItem[]> {
+    public listEvents(): Observable<EventItem[]> {
         if (!this.eventCache) {
             this.eventCache = this.http.get(this.baseUrl)
                 .pipe(
@@ -33,6 +34,8 @@ export class EventService {
                 map(x => this.fetchModel(x))
             );
     }
+
+    public createEvent(): void {}
 
     private fetchModel(data: any): EventItem {
         return new EventItem(data);

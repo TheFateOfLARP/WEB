@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { EventItem } from '../../models/event-item';
+import { EventItem } from '../../models/event-item.model';
 
 @Component({
     selector: 'larp-event-card',

@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -15,11 +16,10 @@ import { routes } from './app.routing';
 import { MatDesignModule } from './mat-design.module';
 
 import { AppComponent } from './app.component';
-import { EventCardComponent, EventFormDialogComponent } from './components/';
-import { EventListComponent } from './views/';
-import { ShortTextPipe } from './pipes/';
-import { reducers, metaReducers } from './reducers';
-import { EventEffects } from './effects/event.effects';
+import { EventCardComponent, EventFormDialogComponent, EventListComponent } from './components/';
+import { ShortTextPipe } from './utils/pipes/';
+import { reducers, metaReducers } from './store/reducers';
+import { EventEffects } from './store/effects/event.effects';
 
 @NgModule({
     declarations: [

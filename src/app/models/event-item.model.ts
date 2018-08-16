@@ -1,5 +1,5 @@
-import { EventType } from './event-type';
-import { User } from './user';
+import { EventType } from './event-type.model';
+import { User } from './user.model';
 
 export class EventItem {
     public id: number;

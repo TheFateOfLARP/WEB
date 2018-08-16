@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { EventListComponent } from './views';
-import { EventResolver } from './services/event.resolver';
-import { EventFormDialogComponent } from './components';
+import { EventFormDialogComponent, EventListComponent } from './components';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
