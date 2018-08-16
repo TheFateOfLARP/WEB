@@ -1,11 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { tap } from 'rxjs/operators';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { EntityServices, EntityCollectionService } from 'ngrx-data';
 
 import { EventItem } from '../../models/event-item.model';
-import { State } from '../../store/reducers';
-import * as eventActions from '../../store/actions/event.action';
 
 @Component({
     selector: 'larp-event-list',
@@ -15,20 +12,19 @@ import * as eventActions from '../../store/actions/event.action';
 })
 export class EventListComponent implements OnInit {
 
-    public eventList: Observable<EventItem[]>;
+    public eventList$: Observable<EventItem[]>;
+    private eventService: EntityCollectionService<EventItem>;
 
     constructor(
-        private cdr: ChangeDetectorRef,
-        private store: Store<State>
+        private entityService: EntityServices,
+        private cdr: ChangeDetectorRef
     ) {
-        store.dispatch(new eventActions.EventFetchRequestAction());
+        this.eventService = entityService.getEntityCollectionService('Event');
     }
 
     ngOnInit() {
-        this.eventList = this.store.select('events')
-            .pipe(
-                tap(() => this.cdr.markForCheck())
-            );
+        this.eventList$ = this.eventService.entities$;
+        this.eventService.getAll();
     }
 
 }

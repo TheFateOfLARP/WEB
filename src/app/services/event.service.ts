@@ -1,43 +1,46 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { EventItem } from '../models/event-item.model';
-import { map } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
+
+import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from 'ngrx-data';
 
 @Injectable({
     providedIn: 'root'
 })
-export class EventService {
+export class EventService  extends EntityCollectionServiceBase<EventItem> {
 
-    private baseUrl = '/events';
-    private eventCache: Observable<EventItem[]>;
+    // private baseUrl = '/events';
+    // private eventCache: Observable<EventItem[]>;
 
     constructor(
-        private http: HttpClient
-    ) { }
-
-    public listEvents(): Observable<EventItem[]> {
-        if (!this.eventCache) {
-            this.eventCache = this.http.get(this.baseUrl)
-                .pipe(
-                    map( (result: EventItem[]) => result.map(x => this.fetchModel(x)) )
-                );
-        }
-
-        return this.eventCache;
+        private entityServiceFactory: EntityCollectionServiceElementsFactory
+    ) {
+        super('EntityItem', entityServiceFactory);
     }
 
-    public eventInfo(id: number): Observable<EventItem> {
-        return this.http.get(`${this.baseUrl}/${id}`)
-            .pipe(
-                map(x => this.fetchModel(x))
-            );
-    }
+    // public listEvents(): Observable<EventItem[]> {
+    //     if (!this.eventCache) {
+    //         this.eventCache = this.http.get(this.baseUrl)
+    //             .pipe(
+    //                 map( (result: EventItem[]) => result.map(x => this.fetchModel(x)) )
+    //             );
+    //     }
 
-    public createEvent(): void {}
+    //     return this.eventCache;
+    // }
 
-    private fetchModel(data: any): EventItem {
-        return new EventItem(data);
-    }
+    // public eventInfo(id: number): Observable<EventItem> {
+    //     return this.http.get(`${this.baseUrl}/${id}`)
+    //         .pipe(
+    //             map(x => this.fetchModel(x))
+    //         );
+    // }
+
+    // public createEvent(): void {}
+
+    // private fetchModel(data: any): EventItem {
+    //     return new EventItem(data);
+    // }
 }

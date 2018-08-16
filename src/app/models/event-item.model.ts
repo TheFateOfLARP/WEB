@@ -4,7 +4,7 @@ import { User } from './user.model';
 export class EventItem {
     public id: number;
     public name: string;
-    public imgUrl: string;
+    public imageUrl: string;
     public description: string;
     public price: object;
     public dateStart?: Date;
@@ -21,7 +21,7 @@ export class EventItem {
     ) {
         this.id = data['id'];
         this.name = data['name'];
-        this.imgUrl = data['imageUrl'];
+        this.imageUrl = data['imageUrl'];
         this.description = data['description'];
         this.price = data['price'] || {};
         this.location = data['location'] || '';
