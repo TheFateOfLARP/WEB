@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { EventCardComponent, EventFormDialogComponent, EventListComponent } from './components/';
 import { ShortTextPipe } from './utils/pipes/';
 import { routes } from './app.routing';
+import { EventInfoComponent } from './components/event-info/event-info.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { routes } from './app.routing';
         EventCardComponent,
         EventListComponent,
         EventFormDialogComponent,
-        ShortTextPipe
+        ShortTextPipe,
+        EventInfoComponent
     ],
     imports: [
         BrowserModule,

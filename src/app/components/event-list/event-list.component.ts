@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EntityServices, EntityCollectionService } from 'ngrx-data';
 
@@ -16,10 +16,9 @@ export class EventListComponent implements OnInit {
     private eventService: EntityCollectionService<EventItem>;
 
     constructor(
-        private entityService: EntityServices,
-        private cdr: ChangeDetectorRef
+        private entityService: EntityServices
     ) {
-        this.eventService = entityService.getEntityCollectionService('Event');
+        this.eventService = this.entityService.getEntityCollectionService('Event');
     }
 
     ngOnInit() {

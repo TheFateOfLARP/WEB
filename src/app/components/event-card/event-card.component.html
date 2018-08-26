@@ -7,20 +7,21 @@
     <img mat-card-image [src]="event.imageUrl">
     <mat-card-content>
         {{event.description | shortText: maxLength}}
-        <a mat-icon-button
+        <span>...</span>
+        <!-- <a mat-icon-button
             aria-label='read more'
             *ngIf='event.description.length > maxLength'
             [routerLink]="['/event', event.id].join('/')">
             <mat-icon aria-label="Read more icon">more_horiz</mat-icon>
-        </a>
+        </a> -->
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions align='end'>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
         <button mat-button>DIE!</button>
     </mat-card-actions>
     <mat-card-footer>
-        <span>{{event.dateStart | date}}</span>
-        <span>{{event.dateEnd | date}}</span>
+        <span class='start-date'>{{event.dateStart | date}}</span>
+        <span class='end-date'>{{event.dateEnd | date}}</span>
     </mat-card-footer>
 </mat-card>

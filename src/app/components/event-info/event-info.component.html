@@ -1,0 +1,20 @@
+<mat-card class="event-card">
+    <mat-card-title-group>
+        <div mat-card-avatar class="event-header-image"></div>
+        <mat-card-title>{{event?.name}}</mat-card-title>
+        <mat-card-subtitle>{{event?.type.name}}</mat-card-subtitle>
+        <img mat-card-md-image [src]="event?.imageUrl">
+    </mat-card-title-group>
+    <mat-card-content>
+        {{event?.description}}
+    </mat-card-content>
+    <mat-card-actions align='end'>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+        <button mat-button>DIE!</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        <span class='start-date'>{{event?.dateStart | date}}</span>
+        <span class='end-date'>{{event?.dateEnd | date}}</span>
+    </mat-card-footer>
+</mat-card>
