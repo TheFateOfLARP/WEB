@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -15,6 +15,7 @@ import { EventCardComponent, EventFormDialogComponent, EventListComponent } from
 import { ShortTextPipe } from './utils/pipes/';
 import { routes } from './app.routing';
 import { EventInfoComponent } from './components/event-info/event-info.component';
+import { ModelInterceptor } from './services/model-interceptor';
 
 
 @NgModule({
@@ -35,6 +36,13 @@ import { EventInfoComponent } from './components/event-info/event-info.component
         HttpClientModule,
         MatDesignModule,
         AppStoreModule,
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ModelInterceptor,
+            multi: true
+        }
     ],
     entryComponents: [
         EventFormDialogComponent

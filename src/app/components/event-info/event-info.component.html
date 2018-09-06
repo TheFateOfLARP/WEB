@@ -2,10 +2,10 @@
     <mat-card-title-group>
         <mat-card-title>{{event.name}}</mat-card-title>
         <mat-card-subtitle>{{event.type}}</mat-card-subtitle>
-        <img mat-card-md-image [src]="event.imageURL">
+        <img mat-card-md-image [src]="event.imageUrl">
     </mat-card-title-group>
     <mat-card-content>
-        <p [innerHTML]='event.descr'></p>
+        <p [innerHTML]='event.description'></p>
     </mat-card-content>
     <mat-card-actions align='end'>
         <button mat-button>LIKE</button>

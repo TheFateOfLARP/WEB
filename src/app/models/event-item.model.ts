@@ -4,8 +4,8 @@ import { User } from './user.model';
 export class EventItem {
     public id: number;
     public name: string;
-    public imageURL: string;
-    public descr: string;
+    public imageUrl: string;
+    public description: string;
     public price: object;
     public dateStart?: Date;
     public dateEnd?: Date;
@@ -21,8 +21,8 @@ export class EventItem {
     ) {
         this.id = data['id'];
         this.name = data['name'] || 'Jhon Doe';
-        this.imageURL = data['imageURL'] || 'https://material.angular.io/assets/img/examples/shiba1.jpg';
-        this.descr = data['descr'] || 'whololo';
+        this.imageUrl = data['imageURL'] || 'https://material.angular.io/assets/img/examples/shiba1.jpg';
+        this.description = data['descr'] || 'whololo';
         this.price = data['price'] || {};
         this.location = data['location'] || '';
         this.latlng = data['latlong'] || {};

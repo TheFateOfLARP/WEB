@@ -7,7 +7,7 @@ export class EventType {
         data?: EventType
     ) {
         this.id = data['id'];
-        this.name = data['name'];
-        this.slug = data['slug'];
+        this.name = data['name'] || 'whaaa';
+        this.slug = data['slug'] || 'whaaas';
     }
 }

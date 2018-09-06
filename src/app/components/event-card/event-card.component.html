@@ -4,9 +4,9 @@
         <mat-card-title>{{event.name}}</mat-card-title>
         <mat-card-subtitle>{{event.type}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="event.imageURL">
+    <img mat-card-image [src]="event.imageUrl">
     <mat-card-content>
-        {{event.descr | shortText: maxLength}}
+        {{event.description | shortText: maxLength}}
         <span>...</span>
     </mat-card-content>
     <mat-card-actions align='end'>
