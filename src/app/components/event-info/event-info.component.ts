@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class EventInfoComponent implements OnInit {
 
-    public event: Observable<EventItem>;
+    public event$: Observable<EventItem>;
     private eventService: EntityCollectionService<EventItem>;
 
     constructor(
@@ -20,7 +20,7 @@ export class EventInfoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.event = this.eventService.getByKey(1);
+        this.event$ = this.eventService.getByKey(1);
     }
 
 }

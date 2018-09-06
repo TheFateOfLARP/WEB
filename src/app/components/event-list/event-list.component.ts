@@ -19,10 +19,10 @@ export class EventListComponent implements OnInit {
         private entityService: EntityServices
     ) {
         this.eventService = this.entityService.getEntityCollectionService('Event');
+        this.eventList$ = this.eventService.entities$;
     }
 
     ngOnInit() {
-        this.eventList$ = this.eventService.entities$;
         this.eventService.getAll();
     }
 

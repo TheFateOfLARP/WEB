@@ -7,7 +7,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     // { path: 'add', outlet: 'popup', pathMatch: 'full' },
     { path: 'home', component: EventListComponent, pathMatch: 'full' },
-    { path: 'event', pathMatch: 'prefix', children: [
+    { path: 'card', pathMatch: 'prefix', children: [
         { path: ':id', pathMatch: 'prefix', component: EventInfoComponent, children: [
             { path: 'edit', component: EventFormDialogComponent, pathMatch: 'full' }
         ] }

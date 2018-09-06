@@ -2,18 +2,12 @@
     <mat-card-header>
         <div mat-card-avatar class="event-header-image"></div>
         <mat-card-title>{{event.name}}</mat-card-title>
-        <mat-card-subtitle>{{event.type.name}}</mat-card-subtitle>
+        <mat-card-subtitle>{{event.type}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="event.imageUrl">
+    <img mat-card-image [src]="event.imageURL">
     <mat-card-content>
-        {{event.description | shortText: maxLength}}
+        {{event.descr | shortText: maxLength}}
         <span>...</span>
-        <!-- <a mat-icon-button
-            aria-label='read more'
-            *ngIf='event.description.length > maxLength'
-            [routerLink]="['/event', event.id].join('/')">
-            <mat-icon aria-label="Read more icon">more_horiz</mat-icon>
-        </a> -->
     </mat-card-content>
     <mat-card-actions align='end'>
         <button mat-button>LIKE</button>
